@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.log
+logs/
+dist/
+.DS_Store
+
+# PM2
+.pm2/
+
+# Benchmark results
+results/
+*.json.bak
