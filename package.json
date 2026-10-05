@@ -1,7 +1,7 @@
 {
   "name": "node-100k-rps",
   "version": "1.0.0",
-  "description": "Production-style Node.js API benchmark project — 100K RPS learning lab",
+  "description": "Production-style Node.js API — 100K RPS learning lab",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -13,13 +13,6 @@
     "pm2:logs": "pm2 logs",
     "pm2:monit": "pm2 monit",
     "db:seed": "node scripts/seed.js",
-    "bench": "node scripts/benchmark.js",
-    "bench:health": "node scripts/benchmark.js health",
-    "bench:users10": "node scripts/benchmark.js users-10",
-    "bench:users100": "node scripts/benchmark.js users-100",
-    "bench:users1000": "node scripts/benchmark.js users-1000",
-    "bench:user1": "node scripts/benchmark.js user-single",
-    "bench:all": "node scripts/benchmark.js all",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f postgres"
@@ -33,7 +26,6 @@
     "dotenv": "^16.4.7"
   },
   "devDependencies": {
-    "autocannon": "^7.15.0",
     "pm2": "^5.4.3"
   },
   "engines": {
