@@ -1,0 +1,23 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # ── Node.js app metrics (prom-client) ────────────────────────
+  # Requires installing `prom-client` and exposing GET /metrics.
+  # See the README for the optional metrics setup.
+  - job_name: 'node_app'
+    static_configs:
+      - targets: ['host.docker.internal:3000']
+    metrics_path: '/metrics'
+
+  # ── PostgreSQL exporter ────────────────────────────────────
+  # Start with: docker run -p 9187:9187 prometheuscommunity/postgres-exporter
+  - job_name: 'postgresql'
+    static_configs:
+      - targets: ['host.docker.internal:9187']
+
+  # ── Prometheus self-monitoring ──────────────────────────────
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
